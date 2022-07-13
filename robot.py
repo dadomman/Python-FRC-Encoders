@@ -56,13 +56,30 @@ def autonomousInit(self):
     
     
 def autonomousPeriodic(self): 
-
+#Uses strafing to autonomously form a square
             wpilib.Encoder()
-            self.frontLeftMotor.set(1)
-            self.frontRightMotor.set(1)
-            self.rearLeftMotor.set(1)
-            self.rearRightMotor.set(1)
-            sleep()
+            self.frontLeftMotor.set(3)
+            self.frontRightMotor.set(3)
+            self.rearLeftMotor.set(3)
+            self.rearRightMotor.set(3)
+            sleep(3)
+            self.frontLeftMotor.set(-3)
+            self.frontRightMotor.set(3)
+            self.rearLeftMotor.set(3)
+            self.rearRightMotor.set(-3)
+            sleep(3)
+            self.frontLeftMotor.set(-3)
+            self.frontRightMotor.set(-3)
+            self.rearLeftMotor.set(-3)
+            self.rearRightMotor.set(-3)
+            sleep(3)
+            self.frontLeftMotor.set(3)
+            self.frontRightMotor.set(-3)
+            self.rearLeftMotor.set(-3)
+            self.rearRightMotor.set(3)
+            sleep(3)
+
+
 
     
 
