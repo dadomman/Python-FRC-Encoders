@@ -58,26 +58,34 @@ def autonomousInit(self):
 def autonomousPeriodic(self): 
 #Uses strafing to autonomously form a square
             wpilib.Encoder()
-            self.frontLeftMotor.set(3)
-            self.frontRightMotor.set(3)
-            self.rearLeftMotor.set(3)
-            self.rearRightMotor.set(3)
-            sleep(3)
-            self.frontLeftMotor.set(-3)
-            self.frontRightMotor.set(3)
-            self.rearLeftMotor.set(3)
-            self.rearRightMotor.set(-3)
-            sleep(3)
-            self.frontLeftMotor.set(-3)
-            self.frontRightMotor.set(-3)
-            self.rearLeftMotor.set(-3)
-            self.rearRightMotor.set(-3)
-            sleep(3)
-            self.frontLeftMotor.set(3)
-            self.frontRightMotor.set(-3)
-            self.rearLeftMotor.set(-3)
-            self.rearRightMotor.set(3)
-            sleep(3)
+            while self.time.get < 12.0:
+                if self.timer.get() < 3.0:
+                    self.frontLeftMotor.set(1)
+                    self.frontRightMotor.set(1)
+                    self.rearLeftMotor.set(1)
+                    self.rearRightMotor.set(1)
+                    sleep(3)
+                elif 3.0 <= self.timer.get()< 6.0:
+                    self.frontLeftMotor.set(-1)
+                    self.frontRightMotor.set(1)
+                    self.rearLeftMotor.set(1)
+                    self.rearRightMotor.set(-1)
+                    sleep(3)
+                elif 6.0 <= self.timer.get() < 9.0:
+                 self.frontLeftMotor.set(-1)
+                 self.frontRightMotor.set(-1)
+                 self.rearLeftMotor.set(-1)
+                 self.rearRightMotor.set(-1)
+                 sleep(3)
+                elif 9.0 <= self.timer.get() < 12.0: 
+                     self.frontLeftMotor.set(1)
+                     self.frontRightMotor.set(-1)
+                     self.rearLeftMotor.set(-1)
+                     self.rearRightMotor.set(1)
+                     sleep(3)
+                else: break
+            
+
 
 
 
